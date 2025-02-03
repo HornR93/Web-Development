@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Záznam návštěv</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 p-6 flex flex-col items-center">
+
+    <h2 class="text-2xl font-semibold mb-4">Seznam návštěv</h2>
+    
+    <button onclick="otevritModal()" class="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600">
+        Přidat záznam
+    </button>
+
+    <!-- Tabulka -->
+    <div class="mt-6 w-full max-w-3xl">
+        <table class="w-full border border-gray-300 bg-white shadow-md rounded-lg overflow-hidden">
+            <thead class="bg-gray-200">
+                <tr class="text-left">
+                    <th class="p-3 border-b">Jméno</th>
+                    <th class="p-3 border-b">Číslo dveří</th>
+                    <th class="p-3 border-b">Datum a čas</th>
+                    <th class="p-3 border-b text-center">Akce</th>
+                </tr>
+            </thead>
+            <tbody id="tabulkaBody" class="text-gray-700">
+                <!-- Nové záznamy se přidají sem -->
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Modální okno -->
+    <div id="modal" class="fixed inset-0 bg-gray-900 bg-opacity-50 hidden flex items-center justify-center">
+        <div class="bg-white p-6 rounded-lg shadow-lg w-80">
+            <h3 class="text-lg font-semibold mb-4">Nový záznam</h3>
+            <label class="block text-sm font-medium">Jméno:</label>
+            <input type="text" id="inputJmeno" class="w-full p-2 border rounded-md mb-3">
+            
+            <label class="block text-sm font-medium">Číslo dveří:</label>
+            <input type="number" id="inputDvere" class="w-full p-2 border rounded-md mb-4">
+            
+            <div class="flex justify-end space-x-2">
+                <button onclick="zavritModal()" class="px-4 py-2 bg-gray-400 text-white rounded-md hover:bg-gray-500">Zrušit</button>
+                <button onclick="pridatZaznam()" class="px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600">Přidat</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function otevritModal() {
+            document.getElementById("modal").classList.remove("hidden");
+        }
+
+        function zavritModal() {
+            document.getElementById("modal").classList.add("hidden");
+        }
+
+        function pridatZaznam() {
+            let jmeno = document.getElementById("inputJmeno").value.trim();
+            let cisloDveri = document.getElementById("inputDvere").value.trim();
+
+            if (!jmeno || !cisloDveri) {
+                alert("Vyplňte všechna pole!");
+                return;
+            }
+
+            // Získání aktuálního data a času
+            let dnes = new Date();
+            let den = dnes.getDate().toString().padStart(2, '0');
+            let mesic = (dnes.getMonth() + 1).toString().padStart(2, '0');
+            let rok = dnes.getFullYear();
+            let hodiny = dnes.getHours().toString().padStart(2, '0');
+            let minuty = dnes.getMinutes().toString().padStart(2, '0');
+            let sekundy = dnes.getSeconds().toString().padStart(2, '0');
+            let datumCas = `${den}.${mesic}.${rok} ${hodiny}:${minuty}:${sekundy}`;
+
+            // Vložení do tabulky
+            let tabulka = document.getElementById("tabulkaBody");
+            let novyRadek = tabulka.insertRow();
+            novyRadek.insertCell(0).textContent = jmeno;
+            novyRadek.insertCell(1).textContent = cisloDveri;
+            novyRadek.insertCell(2).textContent = datumCas;
+
+            // Vytvoření tlačítka "Smazat"
+            let smazatTd = novyRadek.insertCell(3);
+            let smazatButton = document.createElement("button");
+            smazatButton.textContent = "Smazat";
+            smazatButton.classList = "bg-red-500 text-white px-3 py-1 rounded-md hover:bg-red-600";
+            smazatButton.onclick = function () {
+                tabulka.deleteRow(novyRadek.rowIndex - 1);
+            };
+            smazatTd.appendChild(smazatButton);
+            smazatTd.classList.add("text-center");
+
+            // Zavření modálního okna
+            zavritModal();
+
+            // Vyčištění polí
+            document.getElementById("inputJmeno").value = "";
+            document.getElementById("inputDvere").value = "";
+        }
+    </script>
+
+</body>
+</html>
