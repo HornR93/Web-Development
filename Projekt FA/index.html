@@ -141,13 +141,13 @@
                   
                 <div>
                   <label class="py-1 text-white">
-                    <input type="checkbox" class="text-sm text-white accent-teal-500">
+                    <input type="checkbox" class="text-sm text-white accent-teal-400">
                     Zůstat přihlášen
                   </label>
                 </div>
                   
                 <p>                                  
-                  <button class="bg-teal-500 text-white px-4 my-2 py-2 rounded-xl">
+                  <button class="bg-teal-500 text-white px-4 my-2 py-2 rounded-xl hover:bg-teal-600">
                     potvrdit
                   </button>
                 </p>
@@ -160,14 +160,45 @@
                 <p>
                   Nový příchozí do fitka 
                 </p>
+
                 
-                <p>
+                  <button type="button" id="AddUser" class="ml-2 text-white mr-1 pt-1">
+                    
+                    
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-plus hover:text-teal-500"><circle cx="12" cy="12" r="10"/><path d="M8 12h8"/><path d="M12 8v8"/></svg>
+  
+                  </button>
+                  
+                </div>
+
+                <div class="flex bg-zinc-900 px-4 py-2 border rounded-lg gap-4">
+
+                  <div class="flex-col">
+                    
+                    <p class="text-white">Jméno</p>
+                    <label for="Name" id="name" class="text-white "></label>
+                    <input type="name">
+                                        
+                  </div>
+                  
+                  <div>
+
+                    <p class="text-white">Číslo skříňky</p>
+
+
+
+                  </div>
+                  
+                  
+                </div>
+                
+                <p class="px-4 px-2 text-xl text-white">
                   <span id="datumCas"></span>
                 </p>
-              </div>
 
-              <table class="text-white border rounded-xl px-4 py-2 mx-4 my-2">
-                <thead>
+                
+                <table class="text-white border rounded-xl px-4 py-2 mx-4 my-2">
+                  <thead>
                     <tr class="bg-zinc-900">
                       <th class="w-68">Jméno</th><th class="w-48">Příchod</th><th class="w-32">Permanentka</th>
                     </tr>
