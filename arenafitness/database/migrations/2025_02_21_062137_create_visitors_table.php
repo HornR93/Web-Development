@@ -11,13 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('visitors', function (Blueprint $table) {
+        Schema::create('visits', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id');
-            $table->string('name');
             $table->date('date_in');
             $table->date('date_out');
-            $table->string('subscription');
+            $table->string('keyNumber');
+            $table->string('note');
             $table->timestamps();
         });
     }
