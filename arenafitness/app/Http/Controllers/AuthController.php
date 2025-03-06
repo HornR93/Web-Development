@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Http\RedirectResponse;
 
 class AuthController extends Controller
 {
@@ -17,23 +19,8 @@ class AuthController extends Controller
         return view('login');
     }
 
+
     public function register(Request $request)
-    {
-
-        User::create([
-
-            'name' => $request->name,
-            'email' => $request->email,
-            'password' => $request->password,
-            
-
-
-
-        ]);
-       
-    }
-
-    public function store(Request $request)
     {
         $validated = $request->validate([
             'name' => ['required', 'min:5'],
@@ -55,7 +42,7 @@ class AuthController extends Controller
             "password" => $validated['password'],
         ]);
 
-        return redirect('/');
+        return redirect('/login');
     }
 
     /**
@@ -66,17 +53,29 @@ class AuthController extends Controller
         $credentials = $request->validate([
             'email' => ['required', 'email'],
             'password' => ['required'],
+
+            
         ]);
 
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
 
-            return redirect()->intended('dashboard');
+            return redirect()->intended('/');
         }
 
         return back()->withErrors([
             'email' => 'Špatný email nebo heslo',
         ])->onlyInput('email');
     }
+
+    public function logout(Request $request)
+{
+    Auth::logout(); // Odhlásí uživatele
+
+    $request->session()->invalidate(); // Invalidační session
+    $request->session()->regenerateToken(); // Obnova CSRF tokenu
+
+    return redirect('/login'); // Přesměrování na login
+}
 }
 
