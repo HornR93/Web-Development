@@ -37,7 +37,7 @@
             </li>
             
             
-            <a href=""></a>
+            <a href="./subscription"></a>
             <li class="flex hover:text-teal-500 hover:px-2 hover:rounded-lg hover:font-bold">
                 <svg xmlns="http://www.w3.org/2000/svg" class="pr-1" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-dock"><path d="M2 8h20"/><rect width="20" height="16" x="2" y="4" rx="2"/><path d="M6 16h12"/></svg>
                 <p>Permanentky</p>
@@ -71,27 +71,5 @@
     </nav>
     
 </aside>
-
-<script>
-
-
-const LogInOpen = document.getElementById('LogInOpen')
-const LogInClose = document.getElementById('LogInClose')
-const LogIn = document.getElementById('LogIn')
-
-
-
-
-
-LogInOpen.addEventListener('click', () => {
-    LogIn.showModal();
-
-});
-
-LogInClose.addEventListener('click', () => {
-    LogIn.close();
-});
-
-</script>
 
 </div>

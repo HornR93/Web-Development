@@ -1,5 +1,5 @@
-const LogInOpen = document.getElementById('LogInOpen')
-const LogInClose = document.getElementById('LogInClose')
+const AddOpen = document.getElementById('LogInOpen')
+const AddClose = document.getElementById('LogInClose')
 const LogIn = document.getElementById('LogIn')
 
 
