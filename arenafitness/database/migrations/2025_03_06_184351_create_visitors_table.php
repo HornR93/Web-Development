@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('gender');
             $table->string('note');
             $table->string('mail');
-            $table->timestamps();        });
+            $table->timestamps();      
+          });
     }
 };

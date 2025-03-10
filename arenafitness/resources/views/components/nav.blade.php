@@ -19,37 +19,33 @@
         <nav class="text-white font-medium flex flex-col gap-2 mx-4">
             
             <p class="mt-2 ml-6 text-zinc-500 text-sm font-semibold">Menu</p>
+                        
             
-            <a href=""></a>
-            <li class="flex hover:text-teal-500 hover:px-2 hover:rounded-lg hover:font-bold relative">
+            <a href="/">
+
+                <li class="flex hover:text-teal-500 hover:px-2 hover:rounded-lg hover:font-bold">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="pr-1" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-notebook"><path d="M2 6h4"/><path d="M2 10h4"/><path d="M2 14h4"/><path d="M2 18h4"/><rect width="16" height="20" x="4" y="2" rx="2"/><path d="M16 2v20"/></svg>
+                    <p>Aktuální stav</p>
+                </li>
+            </a>
                 
-                <span class="bg-teal-500 w-4 h-4 rounded-full absolute text-xs top-0 right-16 flex items-center justify-center hover:transition-all">1</span>
+            
+            <a href="/subscription">
+
+                <li class="flex hover:text-teal-500 hover:px-2 hover:rounded-lg hover:font-bold">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="pr-1" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-dock"><path d="M2 8h20"/><rect width="20" height="16" x="2" y="4" rx="2"/><path d="M6 16h12"/></svg>
+                    <p>Permanentky</p>
+                </li>
                 
-                <svg xmlns="http://www.w3.org/2000/svg" class="pr-1" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-newspaper"><path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-2 2Zm0 0a2 2 0 0 1-2-2v-9c0-1.1.9-2 2-2h2"/><path d="M18 14h-8"/><path d="M15 18h-5"/><path d="M10 6h8v4h-8V6Z"/></svg>
-                <p>Novinky</p>
-            </li>
-            
-            
-            <a href=""></a>
-            <li class="flex hover:text-teal-500 hover:px-2 hover:rounded-lg hover:font-bold">
-                <svg xmlns="http://www.w3.org/2000/svg" class="pr-1" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-notebook"><path d="M2 6h4"/><path d="M2 10h4"/><path d="M2 14h4"/><path d="M2 18h4"/><rect width="16" height="20" x="4" y="2" rx="2"/><path d="M16 2v20"/></svg>
-                <p>Aktuální stav</p>
-            </li>
-            
-            
-            <a href="./subscription"></a>
-            <li class="flex hover:text-teal-500 hover:px-2 hover:rounded-lg hover:font-bold">
-                <svg xmlns="http://www.w3.org/2000/svg" class="pr-1" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-dock"><path d="M2 8h20"/><rect width="20" height="16" x="2" y="4" rx="2"/><path d="M6 16h12"/></svg>
-                <p>Permanentky</p>
-        </li>
+            </a>
         
-        
-        <a href=""></a>
-        <li class="flex hover:text-teal-500 hover:px-2 hover:rounded-lg hover:font-bold">
-            <svg xmlns="http://www.w3.org/2000/svg" class="pr-1" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-book-marked"><path d="M10 2v8l3-3 3 3V2"/><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H19a1 1 0 0 1 1 1v18a1 1 0 0 1-1 1H6.5a1 1 0 0 1 0-5H20"/></svg>
-            <p>Historie návštěv</p>
-        </li>
-        <a href=""></a>
+            <a href="/history">
+                
+                <li class="flex hover:text-teal-500 hover:px-2 hover:rounded-lg hover:font-bold">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="pr-1" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-book-marked"><path d="M10 2v8l3-3 3 3V2"/><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H19a1 1 0 0 1 1 1v18a1 1 0 0 1-1 1H6.5a1 1 0 0 1 0-5H20"/></svg>
+                    <p>Historie návštěv</p>
+                </li>
+            </a>
         
         <div class="py-4 gap-2 text-white flex justify-bottom">
             

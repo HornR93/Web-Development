@@ -3,7 +3,18 @@
     <x-visit/>
 
                 
-    <x-table/>
+    <x-table> 
+        
+        
+        
+        :columns="['Jméno', 'Email', 'Věk']" :rows="$visitors" 
 
+
+
+
+
+
+
+    </x-table>
     
 </x-layouts.app>
