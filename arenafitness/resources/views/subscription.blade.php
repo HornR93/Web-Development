@@ -8,16 +8,17 @@
     ];
     
 @endphp
+<div>
+
+    <x-visitor/>
+
+    
+</div>
+
     <x-table> 
         
-        
-        
+       
         :columns="['Jméno', 'Email', 'Věk']" :rows="$visitors" 
-
-
-
-
-
 
 
     </x-table>

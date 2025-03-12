@@ -3,16 +3,13 @@
             
         <div class="flex justify-between ">
           
-          <H1 class="text-4xl px-6 py-4 text-white font-bold">Aktuální stav</H1>
+          <H1 class="text-4xl px-6 py-4 text-white font-bold">Arena Fitness</H1>
           
           
           
           <div class="flex border rouded-lg bg-zinc-800">
-            <div class="flex-center justify-center text-white">
            
-            </div>
-
-            <div class="flex-col items-center justify-center">
+            <div class="flex-col items-center justify-center text-white">
               
               <p>{{auth()->user()->name}}</p>
               <form action="{{ route('logout') }}" method="POST">

@@ -7,24 +7,21 @@ use Illuminate\Http\Request;
 
 class VisitorController extends Controller
 {
-    // Zobrazí formulář pro přidání návštěvníka
-    public function create()
-    {
-        return view('visitors.create');
-    }
-
-    // Uloží návštěvníka do databáze
     public function store(Request $request)
     {
-        // Ověření dat
         $request->validate([
-            'name' => 'required|string|max:255',
-            'gender' => 'required|in:male,female', // pokud používáš enum pro pohlaví
+            'name' => 'required|string|min:5',
+            'gender' => 'required|in:male,female', 
             'mail' => 'required|email|unique:visitors,mail',
             'note' => 'nullable|string|max:255',
+        ], [
+            'name.required' => 'Jméno je povinné pole',
+            'name.min' => 'Jméno musí mít alespoň 5 znaků',
+            'mail.required' => 'Email je povinné pole',
+            'mail.email' => 'Email musí být ve správném formátu',
+            'mail.unique' => 'Tento email je již registrován',
         ]);
 
-        // Vytvoření nového návštěvníka
         Visitor::create([
             'name' => $request->name,
             'gender' => $request->gender,
@@ -32,7 +29,13 @@ class VisitorController extends Controller
             'note' => $request->note,
         ]);
 
-        // Přesměrování zpět na formulář s potvrzením
-        return redirect()->route('visitors.create')->with('success', 'Návštěvník byl úspěšně přidán.');
-    }
+        
+
+          }
+
+          public function create()
+{
+    $visitors = Visitor::all();
+    return view('subscription', compact('visitors'));
+}
 }

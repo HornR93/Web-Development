@@ -1,16 +1,12 @@
-const AddOpen = document.getElementById('AddOpen')
-const AddClose = document.getElementById('AddClose')
-const AddVisit = document.getElementById('AddVisit')
+document.addEventListener('DOMContentLoaded', function() {
+    
+    document.getElementById('toggleButton').addEventListener('click', function() {
+        var popup = document.getElementById('popupForm');
+        popup.style.display = "flex";
+    });
 
-
-
-
-
-AddOpen.addEventListener('click', () => {
-    AddVisit.showModal();
-
-});
-
-AddClose.addEventListener('click', () => {
-    AddVisit.close();
+    document.getElementById('closeButton').addEventListener('click', function() {
+        var popup = document.getElementById('popupForm');
+        popup.style.display = "none";
+    });
 });
