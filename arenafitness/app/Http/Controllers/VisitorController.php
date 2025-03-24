@@ -36,6 +36,6 @@ class VisitorController extends Controller
           public function create()
 {
     $visitors = Visitor::all();
-    return view('subscription', compact('visitors'));
+    return view('subscription');
 }
 }

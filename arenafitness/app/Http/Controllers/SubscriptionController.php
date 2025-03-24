@@ -20,7 +20,7 @@ class SubscriptionController extends Controller
             'visit_count' => 'nullable|integer|min:0',
             'expiration_date' => 'required|date|after:today',
             'price' => 'nullable|numeric|min:0',
-            'status' => 'boolean',
+            'status' => 'boolean',  //is_active
         ]);
 
         Visitor::create([
